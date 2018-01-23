@@ -1,0 +1,25 @@
+.thumbnail{
+    background: #fff;
+}
+
+.add-company{
+    padding: 5px 10px;
+    margin-top: -5px;
+    background: #3097D1;
+    color: #fff;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.add-company:hover{
+    color: #fff;
+    padding: 5px 15px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
