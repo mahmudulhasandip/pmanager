@@ -54,7 +54,7 @@ class CompaniesController extends Controller
     {
         //
         if(Auth::check()){
-            $Company = Company::create([
+            $company = Company::create([
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),
                 'user_id' => Auth::user()->id

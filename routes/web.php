@@ -17,9 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);
 
 Route::resource('companies', 'CompaniesController');
+
+Route::get('/projects/create/{id?}', [
+    'as' => 'projects.create',
+    'uses' => 'ProjectsController@create'
+]);
+
 Route::resource('projects', 'ProjectsController');
 Route::resource('roles', 'RolesController');
 Route::resource('tasks', 'TasksController');
