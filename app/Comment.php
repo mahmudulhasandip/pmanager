@@ -15,7 +15,7 @@ class Comment extends Model
         'commentable_type',
     ];
 
-    public function user(){
-        return $this->belongsTo('App\user');
+    public function commentable(){
+        return $this->morphTo();
     }
 }

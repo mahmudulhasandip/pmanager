@@ -4,18 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectsController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     
     /**
@@ -35,10 +27,10 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id = NULL)
+    public function create($company_id = NULL)
     {
         //
-        return view('projects.create', ['company_id' => $id]);
+        return view('projects.create', ['company_id' => $company_id]);
     }
 
     /**
@@ -54,6 +46,7 @@ class ProjectsController extends Controller
             $project = Project::create([
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),
+                'company_id' => $request->input('company_id'),
                 'user_id' => Auth::user()->id
             ]);
             if($project){

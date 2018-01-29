@@ -23,14 +23,18 @@ Route::get('/home', [
     'uses' => 'HomeController@index'
 ]);
 
-Route::resource('companies', 'CompaniesController');
 
-Route::get('/projects/create/{id?}', [
-    'as' => 'projects.create',
-    'uses' => 'ProjectsController@create'
-]);
 
-Route::resource('projects', 'ProjectsController');
-Route::resource('roles', 'RolesController');
-Route::resource('tasks', 'TasksController');
-Route::resource('users', 'UsersController');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('companies', 'CompaniesController');
+    Route::get('/projects/create/{company_id?}', [
+        'as' => 'projects.create',
+        'uses' => 'ProjectsController@create'
+    ]);
+    Route::resource('projects', 'ProjectsController');
+    Route::resource('roles', 'RolesController');
+    Route::resource('tasks', 'TasksController');
+    Route::resource('users', 'UsersController');
+});
+
+
