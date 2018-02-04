@@ -10,6 +10,9 @@
 
     <title>{{ config('app.name', 'PManager') }}</title>
 
+    {{--  Pixeden icons  --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -47,10 +50,12 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li><a href="/companies">Companies</a></li>
+                            <li><a href="/companies"><i class='pe-7s-graph3'></i> Companies</a></li>
+                            <li><a href="/projects"><i class='pe-7s-network'></i> Projects</a></li>
+                            <li><a href="/tasks"><i class='pe-7s-note2'></i> Tasks</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <i class='pe-7s-user'></i>{{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
@@ -58,7 +63,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <i class='pe-7s-back-2'></i> Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

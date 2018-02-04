@@ -12,7 +12,18 @@
                                 <label for="name">Project Name<span class='required'>*</span> :</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Project Name" required>
                             </div>
+                            @if($companies)
+                            <div class="form-group">
+                                <label for="company_id">Companies<span class='required'>*</span> :</label>
+                                <select name="company_id" id="company_id" class="form-control">
+                                    @foreach($companies as $company)
+                                        <option value="{{$company->id}}">{{$company->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            @else
                             <input type="hidden" name="company_id" value='{{ $company_id }}' />
+                            @endif
                             <div class="form-group">
                                 <label for="description">Description :</label>
                                 <textarea type="text" class="form-control" id="description" name="description" placeholder="Project Description" rows="5" style="resize: vertical" required></textarea>

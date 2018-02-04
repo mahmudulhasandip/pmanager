@@ -2,6 +2,22 @@ html, body {
     -webkit-font-smoothing: antialiased;
   }
 
+@media (min-width: 768px){
+  .navbar-nav>li>a {
+      padding-top: 6px;
+      padding-bottom: 14px;
+  }
+}
+
+  .nav li i{
+    font-size: 26px;
+    transform: translate(-4px, 5px)  ;
+    -webkit-transform: translate(-4px, 5px)  ;
+    -moz-transform: translate(-4px, 5px)  ;
+    -ms-transform: translate(-4px, 5px)  ;
+    -o-transform: translate(-4px, 5px)  ;
+}
+
 .thumbnail{
     background: #fff;
 }
@@ -112,6 +128,7 @@ html, body {
   
   .comment-actions {
     float: right;
+    min-width: 135px;
   }
   .comment-actions li {
     display: inline;
@@ -128,4 +145,13 @@ html, body {
   }
   .comment-actions li:hover {
     color: #0095ff;
+  }
+
+  .comment-email{
+    color: #acb4c2;
+    font-size: 0.875rem;
+  }
+
+  .font-bold{
+    font-weight: bold;
   }

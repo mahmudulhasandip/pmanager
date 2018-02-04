@@ -18,4 +18,8 @@ class Comment extends Model
     public function commentable(){
         return $this->morphTo();
     }
+
+    public function user(){
+        return $this->hasOne('\App\user', 'id', 'user_id' );
+    }
 }
