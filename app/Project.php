@@ -16,7 +16,7 @@ class Project extends Model
     ];
 
     public function users(){
-        return $this->belongsToMany('App\user');
+        return $this->belongsToMany('App\User');
     }
 
     public function company(){
