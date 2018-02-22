@@ -53,6 +53,20 @@
                             <li><a href="/companies"><i class='pe-7s-graph3'></i> Companies</a></li>
                             <li><a href="/projects"><i class='pe-7s-network'></i> Projects</a></li>
                             <li><a href="/tasks"><i class='pe-7s-note2'></i> Tasks</a></li>
+                            @if(Auth::user()->role_id == 1)
+                            <li class="dropdown">
+                                <a href="#"  class="dropdown-toggle"data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    <i class='pe-7s-user'></i> Admin <span class="caret"></span>
+                                </a>
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('companies.index') }}">All Companies</a></li>
+                                    <li><a href="{{ route('projects.index') }}">All Projects</a></li>
+                                    <li><a href="{{ route('tasks.index') }}">All Tasks</a></li>
+                                    <li><a href="{{ route('roles.index') }}">All Roles</a></li>
+                                </ul>
+                            </li>
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     <i class='pe-7s-user'></i>{{ Auth::user()->name }} <span class="caret"></span>

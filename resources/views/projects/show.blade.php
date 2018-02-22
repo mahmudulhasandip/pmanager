@@ -78,6 +78,33 @@
                         </ol>
                         </div>
                     </div>
+                    <hr>
+                    {{--  add user to project  --}}
+                    <div class="thumbnail" style="padding: 30px;">
+                        <h4>Add User</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="add-user" action="{{route('projects.adduser')}}" method='post'>
+                                    {{ csrf_field() }}
+
+                                    <input type="hidden" name="project_id" value="{{ $project->id }}">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Email" name="email">
+                                        
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">Add</button>
+                                        </span>
+                                    </div><!-- /input-group -->
+                                </form>
+                                <hr>
+                                <ol class="list-unstyled">
+                                    @foreach($project->users as $user)
+                                    <li><a href="#"> {{ $user->email }} </a></li>
+                                    @endforeach
+                                </ol>
+                            </div><!-- /.col-lg-12 -->
+                        </div><!-- /.row -->
+                    </div>
                 </div>
             </div>
 @endsection

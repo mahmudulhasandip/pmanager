@@ -31,6 +31,10 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'projects.create',
         'uses' => 'ProjectsController@create'
     ]);
+    Route::post('/projects/adduser', [
+        'as' => 'projects.adduser',
+        'uses' => 'ProjectsController@adduser'
+    ]);
     Route::resource('projects', 'ProjectsController');
     Route::resource('roles', 'RolesController');
     Route::resource('tasks', 'TasksController');
