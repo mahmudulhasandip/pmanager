@@ -107,7 +107,7 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(Project $project, Company $company)
     {
         //
         $project = Project::find($project->id);
@@ -156,4 +156,6 @@ class ProjectsController extends Controller
 
 
     }
+
+
 }
